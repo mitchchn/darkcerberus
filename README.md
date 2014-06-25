@@ -3,8 +3,17 @@ darkcerberus
 
 **Dark Cerberus** is a dark theme and Safari extension for the [Cerb](http://www.cerb6.com) CRM.
 
-Issues
-------
+Changes
+-------
 
-* The CSS is not complete, so some elements may be unstyled or improperly styled.
-* There is no togggle. There will be.
+v.02: Coffee edition
+
+* New JQuery brain to match the CSS good looks
+* Now highlights posts labelled "urgent"
+
+
+Todo
+-----
+* Day/night toggle
+* Tag highlighting UI
+* Settings page
