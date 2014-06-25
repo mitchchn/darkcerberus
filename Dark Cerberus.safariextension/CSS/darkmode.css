@@ -412,8 +412,8 @@ div.help-box {
 textarea,
 input[type="text"],
 select {
-	background: #666 !important;
-	color: #ccc !important;
+	background: #444 !important;
+	color: #ddd !important;
 }
 
 .ui-state-highlight, .ui-widget-content .ui-state-highlight {
