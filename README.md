@@ -1,7 +1,9 @@
 darkcerberus
 ============
 
-**Dark Cerberus** is a dark theme and Safari extension for the [Cerb](http://www.cerb6.com) CRM.
+**Dark Cerberus** is a ~dark theme and~ Safari extension for the [Cerb](http://www.cerb6.com) CRM.
+
+It began as a dark theme. Now it has other neat tricks, too, like basic tag highlighting. One day, it will take over the planet.
 
 Changes
 -------

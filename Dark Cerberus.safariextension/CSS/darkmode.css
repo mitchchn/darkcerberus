@@ -108,6 +108,7 @@ pre.emailbody div a {
 }
 
 fieldset,
+fieldset div,
 fieldset legend,
 FIELDSET.properties LEGEND {
 	background-image: url("../Images/bg_block.jpg") !important;
@@ -446,4 +447,18 @@ FORM.quick-search DIV.hints {
 
 div.chart-tooltip span {
 	background: #333 !important;
+}
+
+
+
+/* Dirty hacks
+ *
+ * This section uses brute force.
+ * Inline styles and auto-generated IDs that are likely to change are the main targets.
+ */
+
+div#addviewCustomFilterscust_1209 {
+	background-image: url("../Images/bg_block.jpg") !important;
+	color: #ddd !important;
+	background-color: rgba(66,66,66,0.5) !important;	
 }
