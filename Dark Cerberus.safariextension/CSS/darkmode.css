@@ -57,9 +57,13 @@ h2 {
 }
 
 .ui-tabs .ui-tabs-nav li.ui-state-hover {
-	background: rgb(60,60,60) !important;
+	color: #F5AD4C !important;
 	border-color: #DF8E22 !important;
 	z-index:2;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-state-hover a {
+	color: #F5AD4C !important;
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active:hover {
@@ -118,9 +122,9 @@ FIELDSET.properties LEGEND {
 
 div.badge,
 div.badge.badge-lightgray.filters {
-	background: #8C8CDA !important;
-	color:rgb(0,0,0) !important;
-	border:1px solid rgb(44,44,44) !important;
+	background: none !important;
+	color: #B7B7ED !important;
+	border:1px solid #8C8CDA !important;
 }
 
 div.message_note {
@@ -182,22 +186,22 @@ table.worklistBody th:hover {
 
 
 table.worklistBody tr.even {
-	background: #222 !important;
+	background: rgba(34, 34, 34, 0.5) !important;
 }
 
 table.worklistBody tr.odd {
-	background: rgba(66,66,66,0.5) !important;
+	background: rgba(66,66,66,0.5) !important;*/
 }
 
 table.worklistBody tr.selected {
-	background-color: #4747AB !important;
+	background-color: #2D2D9B !important;
 }
 table.worklistBody tr.selected a {
 	color: #fff !important;
 }
 
 table.worklistBody tr.hover {
-	background-color: #7e7ea9 !important;
+	background-color: #4747A7 !important;
 	color: #fff !important;
 }
 
@@ -206,7 +210,7 @@ table.worklistBody tr.hover a {
 }
 
 table.worklistBody tr.selected.hover {
-	background-color: #7e7ea9 !important;
+	background-color: #2D2D9B !important;
 	color: #fff !important;
 }
 
@@ -407,8 +411,8 @@ div.help-box {
 textarea,
 input[type="text"],
 select {
-	background: #606060 !important;
-	color: #fff !important;
+	background: #666 !important;
+	color: #ccc !important;
 }
 
 .ui-state-highlight, .ui-widget-content .ui-state-highlight {
