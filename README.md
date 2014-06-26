@@ -12,8 +12,8 @@ v.05alpha: Can we call it an enhancement suite yet?
 
 **Major new features: Tag/keyword colouring and highlights!**
 
-* Highlights: list entries for posts marked 'level 2' and 'urgent'
-* Colouring: platform names (both tags and in titles)) and the tags 'level 2' and 'urgent'
+* Highlights list entries for posts marked 'level 2' and 'urgent'
+* Colours platform names (both tags and in titles) and the tags 'level 2' and 'urgent'
 * Fuzzy matching: 'iPad' is recognized (and coloured) as 'iOS'
 
 Todo
