@@ -8,16 +8,17 @@ It began as a dark theme. Now it has other neat tricks, too, like basic tag high
 Changes
 -------
 
-v.05alpha: Can we call it an enhancement suite yet?
+v.07alpha: Night and Day
 
-**Major new features: Tag/keyword colouring and highlights!**
+**Major new feature: light/dark toggle!**
 
-* Highlights list entries for posts marked 'level 2' and 'urgent'
-* Colours platform names (both tags and in titles) and the tags 'level 2' and 'urgent'
-* Fuzzy matching: 'iPad' is recognized (and coloured) as 'iOS'
+* Press the sun/moon to switch the lights
+* Better JavaScript that don't need no global variables
+* Tons of bug fixes and better, less hack-ish table traversal code
+* Very rudimentary plugin support
 
 Todo
 -----
-* Day/night toggle
 * Tag highlighting UI
 * Settings page
+* Highlight/colours for light mode

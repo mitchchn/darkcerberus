@@ -191,7 +191,7 @@ table.worklistBody tr.even {
 }
 
 table.worklistBody tr.odd {
-	background: rgba(66,66,66,0.5) !important;*/
+	background: rgba(66,66,66,0.5) !important;
 }
 
 table.worklistBody tr.selected {

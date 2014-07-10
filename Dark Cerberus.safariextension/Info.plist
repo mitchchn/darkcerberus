@@ -5,7 +5,7 @@
 	<key>Author</key>
 	<string>Mitchell Cohen</string>
 	<key>Builder Version</key>
-	<string>9537.76.4</string>
+	<string>9537.77.4</string>
 	<key>CFBundleDisplayName</key>
 	<string>Dark Cerberus</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.05alpha</string>
+	<string>0.07alpha</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Chrome</key>
@@ -27,10 +27,6 @@
 				<string>Scripts/darkmode_init.js</string>
 			</array>
 		</dict>
-		<key>Stylesheets</key>
-		<array>
-			<string>CSS/darkmode.css</string>
-		</array>
 	</dict>
 	<key>ExtensionInfoDictionaryVersion</key>
 	<string>1.0</string>
