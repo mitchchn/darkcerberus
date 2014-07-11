@@ -1,0 +1,499 @@
+body,
+.ui-widget-content {
+	color: #ddd !important;
+	background: #222 !important;
+}
+
+a {
+	color: #bbb !important;
+}
+
+body,
+.block,
+.ui-widget-content,
+#ticketPeekContent {
+	background:#222 !important;
+}
+
+h1 {
+	color: #F5AD4C !important;
+}
+
+h2 {
+	color: #F5AD4C !important;
+}
+.ui-tabs,
+.ui-tabs-nav {
+	background: #222 !important;
+	border-bottom: 1px solid rgb(60,60,60) !important;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	padding-bottom: 0px;
+	color: #F5AD4C !important;
+	border-width: 1px !important;
+	border-color: #DF8E22 !important;
+	border-left: 1px #DF8E22 !important;
+	z-index:2;
+}
+
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a { 
+	color: #F5AD4C !important;
+	font-weight:bold;
+	border-bottom:1px #DF8E22 !important;
+}
+
+.ui-tabs .ui-tabs-nav li:first-child {
+	border-left: 1px #DF8E22 !important;
+}
+
+.ui-tabs .ui-tabs-nav li {
+	background: #000 !important;
+	border-color:rgb(100,100,100);
+	border-left: none !important;
+	border-bottom: none !important;
+	margin: 0.5px -0.5px 0px -0.5px;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-state-hover {
+	color: #F5AD4C !important;
+	border-color: #DF8E22 !important;
+	z-index:2;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-state-hover a {
+	color: #F5AD4C !important;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-active:hover {
+	background: #000 !important;
+	border-bottom:none;
+	z-index:2;
+}
+
+
+
+
+ul.navmenu > li {
+	background: rgba(66,66,66,0.5) !important;
+	border-right:1px solid rgba(77,77,77,0.5) !important;
+}
+
+UL.navmenu > LI.selected {
+	background: rgba(210,210,210,0.5) !important;
+}
+
+
+UL.navmenu > LI.selected:hover {
+	background-color:rgba(210,210,210,0.5) !important;
+}
+
+UL.navmenu > LI:hover {
+	background-color:rgba(115,115,115,0.5) !important;
+}
+
+
+UL.navmenu > LI.selected > A {
+	color: #fff !important;
+}
+
+ul.navmenu + div {
+	background-color:#DF8E22 !important;
+}
+
+.ui-widget-content #conversation a > span,
+pre.emailbody div a {
+	background-color: #6565c2 !important;
+}
+
+fieldset,
+fieldset div,
+fieldset legend,
+FIELDSET.properties LEGEND {
+	background-image: url("../Images/bg_block.jpg") !important;
+	color: #ddd !important;
+	background-color: rgba(66,66,66,0.5) !important;
+}
+
+.dashboard-widget-title {
+	color: #ddd !important;
+	background: rgba(99,99,99,0.5) !important;
+}
+
+div.badge,
+div.badge.badge-lightgray.filters {
+	background: none !important;
+	color: #B7B7ED !important;
+	border:1px solid #8C8CDA !important;
+}
+
+div.message_note {
+	background-image: url("../Images/bg_purple.jpg") !important;
+	background-color: rgb(110,107,205) !important;
+	background-repeat: repeat-x !important;
+	color: #eee !important;
+	margin: 0 !important;
+	padding: 5px !important;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+table.worklist {
+	background: #DF8E22 !important;
+}
+
+
+table.worklist td {
+	padding: 3px;
+	color: rgb(255, 255, 255);
+}
+
+table.worklist td a {
+	color: rgb(255, 255, 255);
+	font-weight: normal;
+	padding-right:3px;
+}
+
+table.worklist td span.title {
+	padding:5px 5px 5px 10px;
+	color: rgb(255, 255, 255);
+	font-weight:bold;
+	font-size:14px;
+}
+
+table.worklistBody th {
+	background-color: rgb(40,40,40) !important;
+	background: linear-gradient(top, rgb(40,40,40), rgb(70,70,70)) !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(40,40,40)), to(rgb(70,70,70))) !important;
+	background: -moz-linear-gradient(top, rgb(240,240,240), rgb(200,200,200));
+	background: -o-linear-gradient(top, rgb(240,240,240), rgb(200,200,200));
+	background: -ms-linear-gradient(top, rgb(240,240,240), rgb(200,200,200));
+	padding:2px 0px 2px 5px;
+	border-right:1px solid rgb(175,175,175);
+	text-align: left;
+	cursor:pointer;
+}
+
+table.worklistBody th:hover {
+	background-color: rgb(150,150,150);
+	background: linear-gradient(top, rgb(200,200,200), rgb(150,150,150));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(200,200,200)), to(rgb(150,150,150)));
+	background: -moz-linear-gradient(top, rgb(200,200,200), rgb(150,150,150));
+	background: -o-linear-gradient(top, rgb(200,200,200), rgb(150,150,150));
+	background: -ms-linear-gradient(top, rgb(200,200,200), rgb(150,150,150));
+	border-right:1px solid rgb(175,175,175);
+}
+
+
+table.worklistBody tr.even {
+	background: rgba(34, 34, 34, 0.5) !important;
+}
+
+table.worklistBody tr.odd {
+	background: rgba(66,66,66,0.5) !important;
+}
+
+table.worklistBody tr.selected {
+	background-color: #2D2D9B !important;
+}
+table.worklistBody tr.selected a {
+	color: #fff !important;
+}
+
+table.worklistBody tr.hover {
+	background-color: #4747A7 !important;
+	color: #fff !important;
+}
+
+table.worklistBody tr.hover a {
+	color: #fff !important;
+}
+
+table.worklistBody tr.selected.hover {
+	background-color: #2D2D9B !important;
+	color: #fff !important;
+}
+
+button {
+	background:none;
+	background-color:rgba(106,106,106,0.5) !important;
+	background: linear-gradient(top, rgba(156,156,156,0.5), rgba(106,106,106,0.5)) !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(156,156,156,0.5)), to(rgba(106,106,106,0.5))) !important;
+	background: -moz-linear-gradient(top, rgba(156,156,156,0.5), rgba(106,106,106,0.5)) !important;
+	background: -o-linear-gradient(top, rgba(156,156,156,0.5), rgba(106,106,106,0.5)) !important;
+	background: -ms-linear-gradient(top, rgba(156,156,156,0.5), rgba(106,106,106,0.5)) !important;
+	cursor:pointer;
+	
+	color: #ddd !important;
+	border:0;
+	/*border:1px solid rgb(185,185,185);*/
+	
+	margin-right:1px;
+	vertical-align:middle;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	
+	padding:5px;
+	margin:0px;
+}
+
+button:hover {
+	background:none;
+	background-color:rgba(56,56,56,0.5) !important;
+	background: linear-gradient(top, rgba(106,106,106,0.5), rgba(56,56,56,0.5)) !important;
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(106,106,106,0.5)), to(rgba(56,56,56,0.5))) !important;
+	background: -moz-linear-gradient(top, rgba(106,106,106,0.5), rgba(56,56,56,0.5)) !important;
+	background: -o-linear-gradient(top, rgba(106,106,106,0.5), rgba(56,56,56,0.5)) !important;
+	background: -ms-linear-gradient(top, rgba(106,106,106,0.5), rgba(56,56,56,0.5)) !important;
+	cursor:pointer;
+}
+
+button div.badge-count {
+	font-family: Verdana, Helvetica, Arial;
+	font-size: 11px;
+	
+	padding:1px 5px 2px 5px;
+	font-weight:500;
+	display:inline;
+	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	
+	background-color:rgb(110,110,110);
+	color:rgb(255,255,255);
+}
+
+button.green div.badge-count {
+	background-color:rgb(163,203,135);
+	color:rgb(255,255,255);
+}
+
+button:hover div.badge-count {
+	background-color:rgb(71,133,210);
+	color:rgb(255,255,255);	
+}
+
+button.toolbar-item {
+	background:none;
+	background-color:rgb(235,235,235);
+}
+
+button.toolbar-item:hover {
+	background:none;
+	background-color:rgb(212,222,234);
+}
+
+button.green:hover {
+	background:none;
+	color:rgb(50,50,50);
+	
+	background-color:rgb(160,198,254);
+	background: linear-gradient(top, rgb(238,242,245), rgb(160,198,254));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(238,242,245)), to(rgb(160,198,254)));
+	background: -moz-linear-gradient(top, rgb(238,242,245), rgb(160,198,254));
+	background: -o-linear-gradient(top, rgb(238,242,245), rgb(160,198,254));
+	background: -ms-linear-gradient(top, rgb(238,242,245), rgb(160,198,254));
+	
+	/*border-color:rgb(130,165,226);*/
+}
+
+button.red {
+	background-color:rgb(214,63,48);
+	background: linear-gradient(top, rgb(250,125,125), rgb(195,45,45));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(250,125,125)), to(rgb(195,45,45)));
+	background: -moz-linear-gradient(top, rgb(250,125,125), rgb(195,45,45));
+	background: -o-linear-gradient(top, rgb(250,125,125), rgb(195,45,45));
+	background: -ms-linear-gradient(top, rgb(250,125,125), rgb(195,45,45));
+	cursor:pointer;
+	/*border:1px solid rgb(170,0,0);*/
+	
+	color:rgb(255,255,255);
+}
+
+button.red:hover {
+	background-color:rgb(208,55,46);
+	background: linear-gradient(top, rgb(250,125,125), rgb(145,15,15));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(250,125,125)), to(rgb(145,15,15)));
+	background: -moz-linear-gradient(top, rgb(250,125,125), rgb(145,15,15));
+	background: -o-linear-gradient(top, rgb(250,125,125), rgb(145,15,15));
+	background: -ms-linear-gradient(top, rgb(250,125,125), rgb(145,15,15));
+	/*border:1px solid rgb(100,5,5);*/
+}
+
+button span {
+}
+
+button.split-left {
+	margin-right:0px;
+	border-right:0px;
+	-moz-border-radius: 5px 0px 0px 5px;
+	-webkit-border-radius: 5px 0px 0px 5px;
+	border-radius: 5px 0px 0px 5px;
+}
+
+button.split-right {
+	margin-left:0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	border-radius: 0px 5px 5px 0px;
+
+	padding:5px 2px;
+	
+	background:none;
+	border-color: rgb(150,150,150);
+	/*border-left:1px solid rgb(150,150,150);*/
+	background-color:rgb(175,175,175);
+	background: linear-gradient(top, rgb(180,180,180), rgb(125,125,125));
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(180,180,180)), to(rgb(125,125,125)));
+	background: -moz-linear-gradient(top, rgb(180,180,180), rgb(125,125,125));
+	background: -o-linear-gradient(top, rgb(180,180,180), rgb(125,125,125));
+	background: -ms-linear-gradient(top, rgb(180,180,180), rgb(125,125,125));
+	color:rgb(255,255,255);
+}
+
+button.split-right:hover {
+	background:none;
+	background-color:rgb(160,198,254);
+}
+
+.ui-dialog .ui-dialog-titlebar {
+	background-color:#DF8E22 !important;
+}
+
+
+span.counter {
+	color: #8C8CDA;
+}
+
+#widget140_counter span {
+	color: #FFF26F;
+}
+
+
+DIV.cerb-popupmenu {
+	background: rgb(60,60,60) !important;
+	border:1px solid #8C8CDA !important;
+}
+
+UL.cerb-popupmenu {
+	background: rgb(60,60,60) !important;
+	border:1px solid #8C8CDA !important;
+}
+
+UL.cerb-popupmenu > LI:hover {
+	background-color:#8C8CDA !important;
+	color:rgb(255,255,255) !important;
+}
+
+UL.cerb-popupmenu > LI:hover A {
+	color:rgb(255,255,255) !important;
+}
+
+div.block {
+	/* 
+background-image: url("../Images/bg_grad.jpg") !important;
+	background-repeat: repeat-x !important;
+	background-color: #222 !important;	
+ */
+ 	background: rgba(66,66,66,0.5) !important;
+	border: 1px solid #aaa !important;
+}
+
+div.help-box {
+	background-image: url("../Images/bg_purple.jpg") !important;
+	background-color: rgb(110,107,205) !important;
+	background-repeat: repeat-x !important;
+	color: #eee !important;
+}
+
+textarea,
+input[type="text"],
+select {
+	background: #444 !important;
+	color: #ddd !important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {
+	background: #333 !important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+	border: 1px solid #FFF594 !important;
+	color: #FFF594 !important;
+}
+
+ul.bubbles li {
+	background: #333 !important;
+	color: #eee !important;
+	border: 1px solid #8C8CDA !important;
+}
+
+ul.bubbles li a {
+	color: #eee !important;
+}
+
+.ui-icon, .ui-widget-content .ui-icon {
+	background-image: url("../Images/ui-icons_469bdd_256x240.png") !important;
+}
+
+FORM.quick-search DIV.hints.hints-float,
+FORM.quick-search DIV.hints {
+	background: #333 !important;
+	color: #eee !important;
+}
+
+div.chart-tooltip span {
+	background: #333 !important;
+}
+
+
+/* Properties */
+
+.property-urgent {
+	color: #FFB294 !important;
+}
+
+.property-technical {
+	color: #65AF8F !important;
+}
+
+/* Highlighting */
+
+.highlight-urgent {
+	background: #B55833 !important;
+}
+
+.highlight-technical {
+	background: #237C56 !important;
+}
+
+.platform-mac {
+	color: pink !important;
+}
+
+.platform-win {
+	color: dodgerblue !important;
+}
+
+.platform-android {
+	color: yellowgreen !important;
+}
+
+.platform-ios {
+	color: aqua !important;
+}
+
+/* Dirty hacks
+ *
+ * This section uses brute force.
+ * Inline styles and auto-generated IDs that are likely to change are the main targets.
+ */
+
+div#addviewCustomFilterscust_1209 {
+	background-image: url("../Images/bg_block.jpg") !important;
+	color: #ddd !important;
+	background-color: rgba(66,66,66,0.5) !important;	
+}

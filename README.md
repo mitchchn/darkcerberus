@@ -8,6 +8,8 @@ It began as a dark theme. Now it has other neat tricks, too, like basic tag high
 Changes
 -------
 
+July 11, 2014: Added Chrome extensions!
+
 v.07alpha: Night and Day
 
 **Major new feature: light/dark toggle!**

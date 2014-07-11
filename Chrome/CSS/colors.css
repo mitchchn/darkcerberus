@@ -1,0 +1,35 @@
+/* Properties */
+
+.property-urgent {
+	color: #FFB294 !important;
+}
+
+.property-technical {
+	color: #65AF8F !important;
+}
+
+/* Highlighting */
+
+.highlight-urgent {
+	background-color: #B55833 !important;
+}
+
+.highlight-technical {
+	background-color: #237C56 !important;
+}
+
+.platform-mac {
+	color: pink !important;
+}
+
+.platform-win {
+	color: dodgerblue !important;
+}
+
+.platform-android {
+	color: yellowgreen !important;
+}
+
+.platform-ios {
+	color: aqua !important;
+}

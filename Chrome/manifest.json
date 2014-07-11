@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "Dark Cerberus",
+  "description": "A dark theme and extension for Cerb 6.",
+  "version": "1",
+
+  "permissions": [
+    "http://agilebits.cerb6.com/*",
+    "https://agilebits.cerb6.com/*"
+  ],
+  "content_scripts": [
+  	{
+  		"matches": [
+  		    "http://agilebits.cerb6.com/*",
+		    "https://agilebits.cerb6.com/*"
+  		],
+  		"js": [
+  			"Scripts/darkmode_init.js"
+  		],
+  		"css": [
+  			"CSS/colors.css"
+  			/*"CSS/darkmode.css"*/
+  		],
+  		"run_at": "document_end"
+  	}
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+  	"Images/*",
+  	"CSS/*.css",
+  	"Scripts/*.js"
+  ]
+}
