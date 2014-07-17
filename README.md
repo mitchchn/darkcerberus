@@ -16,6 +16,7 @@ v0.09alpha: Aesthetics, performance and regex, oh my!
 * Better visual hierarchy in dark mode
 * JS performance was made twice as fast (then slowed down again with new features)
 * FIXED: columns with multi-level cells were improperly tagged
+* FIXED: Chrome extension did not apply styles in iframes (explore mode)
 * Smarter, faster regular expression matching, so it's now used in more places
 * Platform regex matches words like "iTouch" and "MBP"
 
