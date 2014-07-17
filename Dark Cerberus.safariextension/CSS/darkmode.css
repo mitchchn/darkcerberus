@@ -1,18 +1,26 @@
-body,
-.ui-widget-content {
-	color: #ddd !important;
-	background: #222 !important;
+body {
+	color: rgb(222,221,222) !important;
+	background: rgb(43,43,43) !important;
+
+}
+
+ul.ui-tabs-nav[role="tablist"] {
+	background: rgb(43,43,43) !important;
+}
+
+.ui-tabs .ui-tabs-nav li {
+	background: rgb(33,33,33) !important;
+}
+
+.ui-widget-content,
+.ui-widget,
+.ui-corner-all {
+	color: rgb(222,221,222) !important;
+	background: rgb(33,33,33) !important;
 }
 
 a {
 	color: #bbb !important;
-}
-
-body,
-.block,
-.ui-widget-content,
-#ticketPeekContent {
-	background:#222 !important;
 }
 
 h1 {
@@ -24,7 +32,6 @@ h2 {
 }
 .ui-tabs,
 .ui-tabs-nav {
-	background: #222 !important;
 	border-bottom: 1px solid rgb(60,60,60) !important;
 }
 
@@ -33,7 +40,6 @@ h2 {
 	color: #F5AD4C !important;
 	border-width: 1px !important;
 	border-color: #DF8E22 !important;
-	border-left: 1px #DF8E22 !important;
 	z-index:2;
 }
 
@@ -44,14 +50,8 @@ h2 {
 	border-bottom:1px #DF8E22 !important;
 }
 
-.ui-tabs .ui-tabs-nav li:first-child {
-	border-left: 1px #DF8E22 !important;
-}
-
 .ui-tabs .ui-tabs-nav li {
-	background: #000 !important;
-	border-color:rgb(100,100,100);
-	border-left: none !important;
+	border-color:rgb(100,100,100) !important;
 	border-bottom: none !important;
 	margin: 0.5px -0.5px 0px -0.5px;
 }
@@ -67,7 +67,7 @@ h2 {
 }
 
 .ui-tabs .ui-tabs-nav li.ui-tabs-active:hover {
-	background: #000 !important;
+	background: rgb(33,33,33);
 	border-bottom:none;
 	z-index:2;
 }
@@ -111,9 +111,10 @@ fieldset,
 fieldset div,
 fieldset legend,
 FIELDSET.properties LEGEND {
-	background-image: url("../Images/bg_block.jpg") !important;
-	color: #ddd !important;
-	background-color: rgba(66,66,66,0.5) !important;
+	/*background-image: url("../Images/bg_block.jpg") !important;*/
+	color: inherit !important;
+	background: inherit !important;
+;
 }
 
 .dashboard-widget-title {
@@ -143,6 +144,14 @@ table.worklist {
 	background: #DF8E22 !important;
 }
 
+table a.subject {
+	color: rgb(222,221,222) !important;
+}
+
+table tr.even:nth-child(2),
+table tr.odd:nth-child(2) {
+	color: #aaa !important;
+}
 
 table.worklist td {
 	padding: 3px;
@@ -392,14 +401,19 @@ UL.cerb-popupmenu > LI:hover A {
 	color:rgb(255,255,255) !important;
 }
 
-div.block {
+.block, #ticketPeekContent {
 	/* 
 background-image: url("../Images/bg_grad.jpg") !important;
 	background-repeat: repeat-x !important;
 	background-color: #222 !important;	
  */
- 	background: rgba(66,66,66,0.5) !important;
+ 	color: rgb(180,180,180) !important;
+ 	background: rgb(25,25,25) !important;
 	border: 1px solid #aaa !important;
+}
+
+pre.emailbody {
+	color: rgb(222,221,222) !important;
 }
 
 div.help-box {
@@ -449,6 +463,22 @@ div.chart-tooltip span {
 	background: #333 !important;
 }
 
+span#badgeNotifications {
+	background: #FFF26F !important;
+}
+span#badgeNotifications a {
+	color: #222 !important;
+}
+
+/* Extension-tagged Cerb elements */
+
+span.tag-sent,
+span.tag-replied {
+	color: #8C8CDA !important;
+}
+span.tag-received {
+	color: #FFF26F !important;
+}
 
 /* Properties */
 

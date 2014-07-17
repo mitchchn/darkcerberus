@@ -1,9 +1,9 @@
 /* Fonts */
 pre.emailbody {
 	font-family: "Consolas", "Menlo", "Monaco", monospace !important;
-	line-height: 1.6;
-	font-size: 1em;
-	max-width: 45em;
+	line-height: 1.6 !important;
+	font-size: 1em !important;
+	max-width: 45em !important;
 }
 
 

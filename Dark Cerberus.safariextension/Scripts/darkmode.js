@@ -15,7 +15,6 @@ var CEDarkMode = function() {
 				break;
 		}
 	}
-	
 	return {
 		init: function () {
 			$("<a href='#' style='text-decoration: none' class='dayNight'>").insertAfter('#lnkSignedIn');
@@ -38,20 +37,21 @@ CerbExtensionApp = {
   /* Module pattern ftw! */
   plugins: ["CEDarkMode"],
   cerbData: {
+  		propPrefix: "property",
 		keywords: ["Dropbox","iCloud"],
 		properties: {
 		  urgent: "Urgent",
 		  technical: "Level",
 		},
 		tableProperties: {
-		  urgent: ["Urgent", "Yes"],
-		  technical: ["Level", "Level 2 - Technical"]
+			urgent: "Yes",
+			level: "Level 2 - Technical"
 		},
 		platforms: {
-		  mac: /macbook|mac|os\sx|osx|imac/ig,
-		  win: /windows|pc/ig,
-		  ios: /iphone|ipad|ios/ig,
-		  android: /android|droid|nexus|galaxy|samsung/ig
+		  mac: /imac|mac(\s?mini|\s?(book)(\s?(air|pro))?|\s?pro)?|mb(p|a)|os\s?x/ig,
+		  win: /win(dows)?(\s?(7|8|xp|vista))?|pc/ig,
+		  ios: /iphone(\s?[4-5]s?)?|ipod(\s?touch)?|itouch|ipad(\s?(mini|air))?|ios(\s?[5-8])?/ig,
+		  android: /(an)?droid|nexus|galaxy|samsung|htc/ig
 		}
   },
   cerbState: {
@@ -79,6 +79,7 @@ CerbExtensionApp = {
  				break;
  			case "ticket":
  				ce.traverseProperties();
+ 				ce.traverseConversation();
  		}
   	}); 
 	this.updateCerbState();
@@ -123,8 +124,27 @@ ce.getAjaxResponseType = function(e) {
 
 /* Utility methods */
 
+ce.sanitizeProperty = function(str) {
+	return str.split(' ').join('_').toLowerCase();
+};
+
 ce.getTrailingNumbers = function(str) {
 	return str.match(/\d+$/g);
+}
+
+ce.matchAllPlatforms = function(obj) {
+	//Returns the OS matches for a given string
+	var platforms = cd.platforms;
+	var matches = {};
+	for (var os in platforms) {
+		if (platforms.hasOwnProperty(os)) {
+		 var match = obj.match(platforms[os]);
+		 if ( match ) {
+			 matches[os] = match; 
+		 }
+		}
+	}
+	return matches;
 }
 
 ce.matchPlatform = function(obj) {
@@ -160,6 +180,21 @@ ce.tagProperty = function(property) {
 	}
 }
 
+ce.doWhenLoaded = function(selector, callback) {
+	var count = 0;
+	var loaded = setInterval(function() {
+	var element = $(selector);
+	if ( element.length === 0 ) {
+		count++;
+		if ( count < 50 ) {
+			return;
+		}
+	}
+	callback();
+	clearInterval(loaded);
+	},25);
+}
+
 /* Table parsing methods */
 
 ce.getVisibleWorkListID = function(ajaxResponse) {
@@ -175,12 +210,20 @@ ce.getVisibleWorkList = function() {
 }
 
 ce.getVisibleColumns = function() {
+	var columns;
 	if ( cs.visibleWorkListID.length > 0 ) {
-		return cs.visibleWorkList.find("thead").find("a");
+		columns = cs.visibleWorkList.find("th").children("a");
 	}
 	else {
-		return $(".worklistBody").find("thead").find("a")[0];
+		columns = $(".worklistBody").find("th").children("a")[0];
 	}
+	//Give the column headers addressable IDs
+	for (var index = 0; index < columns.length; index++) {
+		var column = columns[index];
+		column.id = ce.sanitizeProperty($(column).attr("title"));		
+		//IMPLEMENT getActive *HERE* (tag class as active)
+	}
+	return columns;
 }
 
 ce.getActiveColumns = function() {
@@ -206,46 +249,59 @@ ce.getActiveColumns = function() {
 	return activeColumns;
 }
 
+ce.isCellFlagged = function(cell, propertyToMatch) {
+	var flagged = false;
+	var propsToFlag = cd.tableProperties;
+	$.each(propsToFlag, function(c,k) {
+		if (c === propertyToMatch && $(cell).text().length > 0) {
+			flagged = true;
+		}
+	});
+	return flagged;
+}
+
 /* Colour methods */
 ce.colorPlatforms = function(obj) {
-    //Check for all platform matches in the element's string representation
-	var matchedPlatforms = ce.matchPlatform($(obj).text());
-	if ( $.isEmptyObject(matchedPlatforms) ) {
-		return;
-	}
-	Object.keys(matchedPlatforms).forEach(function(platform) {
-		//Skip the element has already been tagged
-		var tag = "span.platform-" + platform;
-		if ( ce.alreadyTagged(obj, tag) ) {
-			return;
-		}
-		//Multiple matches for one platform? Tag em all.
-		var multiMatches = matchedPlatforms[platform];
-		multiMatches.forEach(function(match) {
-		 $(obj).html($(obj).html().replace(match,
-		 "<span class='platform-" + platform + "'>" + match + "</span>"));
-		});
-	});
+  //Check for all platform matches in the element's string representation
+  for (var platform in cd.platforms) {
+  	if (cd.platforms.hasOwnProperty(platform)) {
+  		var platformRegex = cd.platforms[platform];
+		$(obj).html($(obj).html().replace(platformRegex, function(match) {
+			return "<span class='platform-" + platform + "'>" + match + "</span>";
+		}));
+  	}  
+  }
 }
 
 /* Table methods */
-ce.tableHighlightCell = function(cell) {
-  var activeColumns = cs.activeColumns;
-  var tableData = cd.tableProperties;
-  
-  Object.keys(activeColumns).forEach(function(property) {
-  	var column = activeColumns[property];
-  	var currentProperty = $(cell).find('td:nth-child(' + column + ')');
-	if (currentProperty.text().length > 0 ) {
-	    $(cell).addClass("highlight-" + property);
-		$(cell).children("tr").addClass("property-" + property);
-     }
-  });
+
+/* Go through each cell in a Cerb table row and add CSS tags */
+ce.markupRow = function(row) {  
+  /*This SLOW hack excludes multiple TDs in the same visible column
+   *(found in Cerb's multi-line cells) */
+  var rowColumns = $(row).find(
+  "tr:eq(0) > td, tr:not(:eq(0)) > td:not(:first-child)");
+
+  for (var index = 0, len = cs.visibleColumns.length; index < len; index++) {
+    var currentCell = $(rowColumns).get(index);
+	var belongsToColumn = cs.visibleColumns[index].id;
+	var cellProperty = cd.propPrefix + "-" + belongsToColumn;
+	$(currentCell).addClass(cellProperty);
+	//Flag the whole row for highlighting (if necessary)
+	if ( ce.isCellFlagged(currentCell, belongsToColumn) ) {
+		$(row).addClass("highlight-" + belongsToColumn);
+		$(row).children("tr").addClass(cellProperty);
+	} 
+  }
 }
 
-ce.tableColorPlatforms = function(obj) {
-	var subjectLine = $(obj).find("a.subject");
+ce.tableColorPlatforms = function(row) {
+	var subjectLine = $(row).find("a.subject");
 	ce.colorPlatforms(subjectLine);
+	var platformCell = $(row).find("td.property-platform");
+	if ( platformCell.length > 0 ) {
+		ce.colorPlatforms(platformCell);
+	}
 }
 
 
@@ -261,7 +317,6 @@ ce.paneColorProperty = function(obj) {
 		}
 	});
 }
-
 ce.colorKeywords = function(obj) {
 /*
 	var keywords = cd.keywords;
@@ -275,13 +330,13 @@ ce.colorKeywords = function(obj) {
 
 // Run through a table
 ce.traverseWorkList = function() {
- var workList = $(cs.visibleWorkList);
- $.each($(workList).children("tbody"), function(index, obj) {
- 	/* Check for various tags and text */
- 	ce.tableHighlightCell(obj);
- 	ce.tableColorPlatforms(obj);
- 	ce.colorKeywords(obj);
- });
+  //This hack excludes Cerb TDs that are not real cells (in multi-line cells)
+  var workListEntries = $(cs.visibleWorkList).find("tbody");
+  for (var index = 0, len = workListEntries.length; index < len; index++) {
+     var row = workListEntries[index];
+	 ce.markupRow(row);
+	 ce.tableColorPlatforms(row);
+  }
 }
 
 // Run through a property pane
@@ -294,11 +349,19 @@ ce.traverseProperties = function() {
  });
 }
 
+ce.traverseConversation = function() {
+	var messages = "div#conversation";
+	ce.doWhenLoaded(messages, function() {
+		$(messages).find("span.tag:contains('sent')").addClass("tag-sent");
+		$(messages).find("span.tag:contains('received')").addClass("tag-received");
+		$(messages).find("span:contains('Replied in')").addClass("tag-replied");
+	});
+}
+
 
 // For now, try to apply rules after all Ajax events
 $.ajaxSetup({
 	complete: function(e) {
-
 		ce.updateCerbState(e.responseText);
 	}
 });

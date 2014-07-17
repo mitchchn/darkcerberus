@@ -4,7 +4,7 @@
 
 (function() {
   /* Inject stylesheets */
-  var extensionStyles = ["darkmode"];
+  var extensionStyles = ["darkmode","colors"];
   
   function loadCSS(sheet) {
 	var styleSheet = document.createElement("link");
@@ -20,7 +20,9 @@
   	loadCSS(extensionStyles[sheet]);
   }
   
-  /* Set up initial sheet states for those that can be toggled */
+  /* Set up initial sheet states */
+  colors.disabled = false;
+  
   switch (localStorage["dark"]) {
   	case "0":
   		darkmode.disabled = true;
