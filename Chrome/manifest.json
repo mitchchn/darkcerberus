@@ -16,7 +16,7 @@
 		    "https://agilebits.cerb6.com/*"
   		],
   		"js": [
-  			"Scripts/darkmode_init.js"
+  			"darkmode_init.js"
   		],
   		"css": [
   			"CSS/colors.css"

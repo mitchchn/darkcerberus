@@ -114,7 +114,6 @@ FIELDSET.properties LEGEND {
 	/*background-image: url("../Images/bg_block.jpg") !important;*/
 	color: inherit !important;
 	background: inherit !important;
-;
 }
 
 .dashboard-widget-title {
@@ -490,14 +489,22 @@ span.tag-received {
 	color: #65AF8F !important;
 }
 
+.property-num_messages {
+	/*color: #82BE51 !important;*/
+}
+
 /* Highlighting */
+
+.highlight-num_messages {
+	/*background-color: #82BE51 !important;*/
+}
 
 .highlight-urgent {
 	background: #B55833 !important;
 }
 
-.highlight-technical {
-	background: #237C56 !important;
+.highlight-level {
+	/*background: #237C56 !important;*/
 }
 
 .platform-mac {

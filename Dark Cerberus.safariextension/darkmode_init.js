@@ -4,7 +4,15 @@
 
 (function() {
   /* Inject stylesheets */
-  var extensionStyles = ["darkmode"];
+  var extensionStyles = ["darkmode","colors"];
+  var plugins = ["darkmode","updateage"];
+  
+  function loadPlugin(plugin) {
+  	  var script   = document.createElement("script");
+	  script.type  = "text/javascript";
+	  script.src   = safari.extension.baseURI + "Scripts/" + plugin + ".js";
+  	  document.body.appendChild(script);
+  }
   
   function loadCSS(sheet) {
 	var styleSheet = document.createElement("link");
@@ -12,8 +20,7 @@
 	    styleSheet.id = sheet;
 	    styleSheet.type = "text/css";
 	    styleSheet.disabled = true;
-  		styleSheet.href = chrome.extension.getURL("/") + "CSS/" + sheet + ".css";
-	  	console.log(styleSheet.href);
+  		styleSheet.href = safari.extension.baseURI + "CSS/" + sheet + ".css";
 		document.head.appendChild(styleSheet);
   }
   
@@ -21,7 +28,9 @@
   	loadCSS(extensionStyles[sheet]);
   }
   
-  /* Set up initial sheet states for those that can be toggled */
+  /* Set up initial sheet states */
+  colors.disabled = false;
+  
   switch (localStorage["dark"]) {
   	case "0":
   		darkmode.disabled = true;
@@ -32,12 +41,17 @@
   	default:
   		localStorage["dark"] = 0;
   }
-})();
 
-(function() {
+  /* Set up plugins */
+  for (var index in plugins ) {
+  	if ( plugins.hasOwnProperty(index) ) {
+  		loadPlugin(plugins[index]);	
+  	}
+  }
+
   /* Inject main script */
   var script   = document.createElement("script");
   script.type  = "text/javascript";
-  script.src   = chrome.extension.getURL("/") + "Scripts/darkmode.js";
+  script.src   = safari.extension.baseURI + "Scripts/cerbextension.js";
   document.body.appendChild(script);
 })();

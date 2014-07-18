@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.09alpha</string>
+	<string>0.10alpha</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>Chrome</key>
@@ -24,7 +24,7 @@
 		<dict>
 			<key>End</key>
 			<array>
-				<string>Scripts/darkmode_init.js</string>
+				<string>darkmode_init.js</string>
 			</array>
 		</dict>
 	</dict>

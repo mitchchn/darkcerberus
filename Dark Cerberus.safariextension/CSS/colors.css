@@ -7,13 +7,24 @@ pre.emailbody {
 }
 
 
-
+/*
+ * UI
+ */
+ 
+.microbadge {
+	text-align: center !important;
+	border-radius: 35% !important;
+	padding-left: 4px !important;
+	padding-right: 4px !important;
+	padding-top: 1px !important;
+}
 
 /*
  * Tag coloring/highlights
  * /
 
 /* Properties */
+
 .property-urgent {
 	color: #FFB294 !important;
 }
@@ -22,13 +33,40 @@ pre.emailbody {
 	color: #65AF8F !important;
 }
 
+.property-new-from {
+	color: #A5C663 !important;
+}
+
+.property-new-from a {
+}
+
+.property-updated {
+	color: #fff;
+}
+
 /* Highlighting */
+
+.highlight-new-from {
+	background: #547412 !important;
+}
+
 .highlight-urgent {
 	background-color: #B55833 !important;
 }
 
-.highlight-technical {
+.highlight-level {
 	background-color: #237C56 !important;
+}
+
+.property-num_messages {
+	text-align: center !important;
+	border-radius: 35% !important;
+	padding-left: 4px !important;
+	padding-right: 4px !important;
+	padding-top: 1px !important;
+	font-weight: bold !important;
+	background: #A5C663 !important;
+	color: #454545 !important;
 }
 
 .platform-mac {

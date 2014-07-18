@@ -1,12 +1,21 @@
 darkcerberus
 ============
 
-**Dark Cerberus** is a ~~dark theme and~~ Safari extension for the [Cerb](http://www.cerb6.com) CRM.
+**Dark Cerberus** is a ~~dark theme and~~ Safari/Chrome extension for the [Cerb](http://www.cerb6.com) CRM.
 
 It began as a dark theme. Now it has other neat tricks, too, like basic tag highlighting. One day, it will take over the planet.
 
 Changes
 -------
+
+**July 18, 2014**
+
+v0.10alpha: A new hope
+
+* NEW: Unanswered tickets are now emphasized in the worklist, so throw out your filters
+* The groundwork for a plugin architecture is in place
+* FIXED: Chrome locked up on occasion when composing messages
+
 
 **July 17, 2014**
 
@@ -38,3 +47,6 @@ Todo
 * Settings page
 * Mobile mode
 * Highlight/colours for light mode
+* Keyboard shortcuts
+* Chrome: do something about the toolbar icon
+* Plugins: last updated heat map
