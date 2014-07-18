@@ -16,6 +16,7 @@ v0.10alpha: A new hope
 * The groundwork for a plugin architecture is in place
 * FIXED: Chrome locked up on occasion when composing messages
 
+Known issues: Property pane colouring is temporarily disabled because it caused the Chrome lockup.
 
 **July 17, 2014**
 
@@ -50,3 +51,4 @@ Todo
 * Keyboard shortcuts
 * Chrome: do something about the toolbar icon
 * Plugins: last updated heat map
+* Rainbows

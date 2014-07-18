@@ -341,6 +341,8 @@ ce.traverseWorkList = function() {
   }
 }
 
+// FIX THIS!
+
 // Run through a property pane
 ce.traverseProperties = function() {
  /*console.log("they called? (props)");*/
